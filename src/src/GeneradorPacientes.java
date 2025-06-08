@@ -17,7 +17,7 @@ public class GeneradorPacientes {
             int categoria = generarCategoria();
             String area = area();
 
-            long tiempoLlegada = i * 600; // 600 segundos = 10 minutos por paciente
+            long tiempoLlegada = i * 600;
 
             Paciente p = new Paciente(nombre, apellido, id, categoria, tiempoLlegada, "En_espera", area);
             System.out.println(id + " llegará en el minuto: " + (tiempoLlegada / 60));

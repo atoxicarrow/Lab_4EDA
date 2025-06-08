@@ -39,7 +39,7 @@ public class SimuladorUrgencia {
             }
 
             if (minutoActual == 500) {
-                Paciente paciente = pacientes.get(42); // uno cualquiera
+                Paciente paciente = pacientes.get(42);
                 int vieja = paciente.getCategoria();
                 hospital.reasignarCategoria(paciente.getID(), 1); // forzar cambio a C1
                 System.out.println("Se cambió la categoría del paciente " + paciente.getID() +
