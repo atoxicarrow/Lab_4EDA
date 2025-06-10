@@ -68,7 +68,7 @@ public class Paciente {
         if( historialCambios.isEmpty()){
             return null;
         }else {
-            return historialCambios.pop();
+            return historialCambios.peek();
         }
     }
 

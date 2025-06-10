@@ -14,8 +14,11 @@ public class AreaAtencion{
         this.capacidadMaxima=capacidadMaxima;
         this.pacientesHeap = new PriorityQueue<>(new Comparator<Paciente>(){
             @Override
-            public int compare(Paciente p1, Paciente p2){
-                return Integer.compare(p1.getCategoria(), p2.getCategoria());
+            public int compare(Paciente p1, Paciente p2) {
+                if (p1.getCategoria() != p2.getCategoria()) {
+                    return Integer.compare(p1.getCategoria(), p2.getCategoria());
+                }
+                return Long.compare(p2.getTiempoLlegada(), p1.getTiempoLlegada());
             }
         });
     }

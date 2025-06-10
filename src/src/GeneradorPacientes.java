@@ -20,7 +20,6 @@ public class GeneradorPacientes {
             long tiempoLlegada = i * 600;
 
             Paciente p = new Paciente(nombre, apellido, id, categoria, tiempoLlegada, "En_espera", area);
-            System.out.println(id + " llegará en el minuto: " + (tiempoLlegada / 60));
             lista.add(p);
         }
 

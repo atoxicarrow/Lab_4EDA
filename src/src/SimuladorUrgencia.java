@@ -41,7 +41,7 @@ public class SimuladorUrgencia {
             if (minutoActual == 500) {
                 Paciente paciente = pacientes.get(42);
                 int vieja = paciente.getCategoria();
-                hospital.reasignarCategoria(paciente.getID(), 1); // forzar cambio a C1
+                hospital.reasignarCategoria(paciente.getID(), 1);
                 System.out.println("Se cambió la categoría del paciente " + paciente.getID() +
                         " de " + vieja + " a 1");
             }
@@ -49,7 +49,7 @@ public class SimuladorUrgencia {
         }
 
         System.out.println("Terminada la simulación.");
-        System.out.println("Total de pacientes atendidos: " + hospital.obtenerPacientesAtendidos().size());
+        System.out.println("Total de pacientes atendidos: " + (hospital.obtenerPacientesAtendidos().size() - 1));
     }
 
 
@@ -71,8 +71,8 @@ public class SimuladorUrgencia {
             long espera = p.tiempoEsperaActual(minutoActual);
             int categoria = p.getCategoria();
             int maxEspera = tiempoMaximoPermitido(categoria);
-            if(espera > maxEspera){
-                System.out.println("Paciente " + p.getID() + " superó el tiempo máximo (" + espera + " min)");
+            if (espera > maxEspera) {
+                hospital.reasignarCategoria(p.getID(), 1);
                 atenderPaciente(minutoActual);
                 break;
             }

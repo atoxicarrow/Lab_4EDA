@@ -47,7 +47,7 @@ public class Hospital {
     Paciente p = colaAtencion.poll();
     AreaAtencion area = areasAtencion.get(p.getArea());
 
-    if(area!= null && !area.estaSaturada()){
+    if(area != null && !area.estaSaturada()){
         area.ingresarPaciente(p);
     }
     p.setEstado("atendido");
@@ -72,7 +72,7 @@ public class Hospital {
         return pacientesAtendidos;
     }
     public List<Paciente> getPacientesEnEspera() {
-        return new ArrayList<>(colaAtencion);
+        return new ArrayList<>(new PriorityQueue<>(colaAtencion));
     }
 
 
